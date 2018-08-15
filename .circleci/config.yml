@@ -13,12 +13,9 @@ jobs:
           name: Test
           command: python tests.py
       - run:
-          name: Congratulations!
           command: echo $SUCCESS_MESSAGE
       - run:
-          name: And now...
           command: echo $INSTRUCTIONS
       - run:
-          name: It at first you don't succeed...
-          command: echo ... dust yourself off, and try again
+          command: "If at first you don't succeed dust yourself off, and try again"
           when: on_fail
