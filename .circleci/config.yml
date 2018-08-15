@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: run tests
+          name: Test
           command: python tests.py
       - run:
           name: Congratulations!
@@ -18,3 +18,7 @@ jobs:
       - run:
           name: And now...
           command: echo $INSTRUCTIONS
+      - run:
+          name: It at first you don't succeed...
+          command: echo ... dust yourself off, and try again
+          when: on_fail
