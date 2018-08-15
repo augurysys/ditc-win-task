@@ -13,9 +13,15 @@ jobs:
           name: Test
           command: python tests.py
       - run:
+          name: Congratulations!
           command: echo $SUCCESS_MESSAGE
+          shell: /bin/sh -eo pipefail -x
       - run:
+          name: And now...
           command: echo $INSTRUCTIONS
+          shell: /bin/sh -eo pipefail -x
       - run:
-          command: "If at first you don't succeed dust yourself off, and try again"
+          name: It at first you don't succeed...
+          command: echo ... dust yourself off, and try again
+          shell: /bin/sh -eo pipefail -x
           when: on_fail
