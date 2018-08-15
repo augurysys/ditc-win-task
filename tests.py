@@ -7,7 +7,7 @@ class TestAreYouInTheMiddle(unittest.TestCase):
 
     def test_isupper(self):
         self.assertTrue('FOO'.isupper())
-        self.assertFalse('FOO'.isupper())
+        self.assertFalse('foo'.isupper())
 
     def test_split(self):
         s = 'hello world'
