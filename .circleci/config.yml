@@ -16,3 +16,7 @@ jobs:
           name: Congratulations!
           command: echo $SUCCESS_MESSAGE
           when: on_fail
+      - run:
+          name: Ane now...
+          command: echo $INSTRUCTIONS
+          when: on_fail          
