@@ -12,3 +12,9 @@ jobs:
       - run:
           name: run tests
           command: python tests.py
+      - run:
+          name: Congratulations!
+          command: |
+            echo You really are in the middle!
+            echo Now click here: https://www.augury.com
+          when: on_fail
