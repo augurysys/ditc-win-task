@@ -1,20 +1,23 @@
 import unittest
+from classes import ClassyClass
+import requests
+from bs4 import BeautifulSoup
 
-class TestAreYouInTheMiddle(unittest.TestCase):
+class TestAreYouInTheCenter(unittest.TestCase):
 
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
+    def test_you_have_class(self):
+        s  = "{}".format(ClassyClass())
+        self.assertEquals(s, "middle")
 
-    def test_isupper(self):
-        self.assertTrue('FOO'.isupper())
-        self.assertFalse(True)
+    def test_you_are_stuck_in_the_middle(self):
+        lyrics = requests.get("https://genius.com/Stealers-wheel-stuck-in-the-middle-with-you-lyrics").text
+        soup = BeautifulSoup(lyrics)
 
-    def test_split(self):
-        s = 'hello world'
-        self.assertEqual(s.split(), ['hello', 'world'])
-        # check that s.split fails when the separator is not a string
-        with self.assertRaises(TypeError):
-            s.split(2)
+        about = soup.find('h3', attrs={"class":"u-inline"}).text
+        ex = [e for e in about.split(" ") if e][4]
+
+        self.assertEquals(ex, "middle")
+
 
 if __name__ == '__main__':
     unittest.main()
