@@ -13,4 +13,4 @@ class MClass(object):
 class ClassyClass(MClass):
 
     def __repr__(self):
-        return super(ClassyClass, self).__repr__() + 'le' 
+        return super(ClassyClass, self).__repr__()
