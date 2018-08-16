@@ -8,7 +8,7 @@ class DClass(BClass):
 
 class MClass(object):
     def __repr__(self):
-        return 'm' + repr(DClass()) + str(DClass()) + repr(DClass())
+        return 'm' + str(DClass()) + repr(BClass()) +  repr(BClass())
 
 class ClassyClass(MClass):
 

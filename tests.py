@@ -14,9 +14,9 @@ class TestAreYouInTheCenter(unittest.TestCase):
         soup = BeautifulSoup(lyrics, "html.parser")
 
         about = soup.find('h3', attrs={"class":"u-inline"}).text
-        ex = [e for e in about.split(" ") if e][4]
+        ex = [e for e in about.split(" ") if e][5]
 
-        self.assertEquals(ex, "middle")
+        self.assertEquals(ex, "Middle")
 
 
 if __name__ == '__main__':
